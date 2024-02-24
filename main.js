@@ -10,6 +10,9 @@ pluss.forEach((plus, index) => {
     } else {
       e.currentTarget.src = "/assets/images/icon-plus.svg";
     }
+    answers.forEach((answer) => {
+      answer.classList.remove("show");
+    });
     answers[index].classList.toggle("show");
   });
 });
