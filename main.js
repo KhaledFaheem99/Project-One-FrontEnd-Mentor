@@ -1,8 +1,6 @@
 let pluss = document.querySelectorAll(".holder .question img");
 let answers = document.querySelectorAll(".holder .answer");
 
-console.log(Array.from(answers));
-
 pluss.forEach((plus, index) => {
   plus.addEventListener("click", (e) => {
     if (e.currentTarget.src.includes("plus")) {
@@ -10,6 +8,9 @@ pluss.forEach((plus, index) => {
     } else {
       e.currentTarget.src = "/assets/images/icon-plus.svg";
     }
+    answers.forEach((answer) => {
+      answer.classList.remove("show");
+    });
     answers[index].classList.toggle("show");
   });
 });
